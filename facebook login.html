@@ -1,0 +1,355 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - log in or sign up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            width: 980px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-top: -80px;
+        }
+
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .left-section h1 {
+            color: #0866ff;
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .left-section h2 {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #1c1e21;
+            max-width: 500px;
+        }
+
+        .right-section {
+            width: 400px;
+        }
+
+        .login-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px 16px 28px;
+            width: 100%;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .login-form input {
+            padding: 14px 16px;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .login-form input:focus {
+            border-color: #0866ff;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        .login-btn {
+            background-color: #0866ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: #1877f2;
+        }
+
+        .forgot-link {
+            text-align: center;
+            margin: 12px 0 16px;
+        }
+
+        .forgot-link a {
+            color: #0866ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dadde1;
+            margin: 16px 0;
+        }
+
+        .create-btn {
+            text-align: center;
+            margin: 8px 0 4px;
+        }
+
+        .create-btn button {
+            background-color: #42b72a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+        }
+
+        .create-btn button:hover {
+            background-color: #36a420;
+        }
+
+        .create-page {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 14px;
+            color: #1c1e21;
+        }
+
+        .create-page a {
+            color: #1c1e21;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .create-page a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: white;
+            padding: 20px 0;
+            font-size: 12px;
+            color: #737373;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            width: 980px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 8px 0 4px;
+            border-bottom: 1px solid #dddfe2;
+        }
+
+        .language-list li {
+            display: inline;
+        }
+
+        .language-list a {
+            color: #737373;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .language-list a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 4px 0 0;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .footer-links a {
+            color: #737373;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 8px;
+            font-size: 11px;
+        }
+
+        .more-languages {
+            display: inline-flex;
+            align-items: center;
+            background: #f5f6f7;
+            border: 1px solid #ccd0d5;
+            border-radius: 2px;
+            font-size: 12px;
+            padding: 2px 4px;
+        }
+
+        .more-languages span {
+            margin-right: 2px;
+        }
+
+        @media (max-width: 900px) {
+            .login-wrapper {
+                flex-direction: column;
+                width: 100%;
+                gap: 30px;
+                margin-top: 0;
+            }
+
+            .left-section {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .left-section h2 {
+                font-size: 24px;
+            }
+
+            .footer-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="left-section">
+                <h1>facebook</h1>
+                <h2>Explore the things<br>you love.</h2>
+            </div>
+
+            <div class="right-section">
+                <div class="login-card">
+                    <form class="login-form" action="#" method="post">
+                        <input type="text" placeholder="Email address or mobile number" name="email">
+                        <input type="password" placeholder="Password" name="password">
+                        <button type="submit" class="login-btn">Log in</button>
+                    </form>
+
+                    <div class="forgot-link">
+                        <a href="#">Forgotten password?</a>
+                    </div>
+
+                    <hr>
+
+                    <div class="create-btn">
+                        <button>Create new account</button>
+                    </div>
+                </div>
+
+                <div class="create-page">
+                    <a href="#"><strong>Create a Page</strong></a> for a celebrity, brand or business.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="language-list">
+                <li><a href="#">English (UK)</a></li>
+                <li><a href="#">中文(简体)</a></li>
+                <li><a href="#">Bahasa Indonesia</a></li>
+                <li><a href="#">日本語</a></li>
+                <li><a href="#">ภาษาไทย</a></li>
+                <li><a href="#">Tiếng Việt</a></li>
+                <li><a href="#">한국어</a></li>
+                <li><a href="#" class="more-languages"><span>⋯</span> More languages…</a></li>
+            </ul>
+
+            <ul class="footer-links">
+                <li><a href="#">Sign up</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Facebook Lite</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Meta Pay</a></li>
+                <li><a href="#">Meta Store</a></li>
+                <li><a href="#">Meta Quest</a></li>
+                <li><a href="#">Ray-Ban Meta</a></li>
+                <li><a href="#">Meta AI</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Threads</a></li>
+                <li><a href="#">Voting Information Centre</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Privacy Centre</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Create ad</a></li>
+                <li><a href="#">Create Page</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">AdChoices</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact uploading and non-users</a></li>
+            </ul>
+
+            <div class="copyright">
+                Meta © 2026
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
