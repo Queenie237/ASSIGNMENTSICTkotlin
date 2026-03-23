@@ -344,7 +344,7 @@ Features:
 - Polymorphic shape rendering
 
 
-# Run Student Grade Calculator
+#Run Student Grade Calculator
 kotlin studentgradecalculator.kt
 
 # Run SmartQueue example
@@ -353,7 +353,84 @@ kotlin milestone1.kt
 # Run Education System example
 kotlin projectmilestone3.kt
 
-# Run Drawable Shapes example
+ #Run Drawable Shapes example
 kotlin drawableshapeswithinterfaces.kt
 
-- 
+ Student Grade Calculator
+
+ Overview
+The **Student Grade Calculator** is a Kotlin-based application with a **graphical user interface (GUI)** that allows educators and students to calculate letter grades from numeric scores. Users can enter multiple students, calculate their grades, and export results to **Excel (.xlsx)** or **PDF** for easy record-keeping and sharing.
+
+
+
+ Features
+- Calculate letter grades (A, B, C, D, F) from numeric scores.
+- GUI interface for interactive input.
+- Process multiple students in a single session.
+- Export results to **Excel (.xlsx)** or **PDF**.
+- Graceful handling of file writing errors.
+
+
+
+Technologies Used
+- Kotlin – main programming language
+- JavaFX – GUI interface
+- Apache POI – Excel export
+- iText – PDF export
+- Gradle – build tool
+- JDK 17 or 20 – runtime environment
+
+
+
+Installation
+
+1. Clone the repository
+```bash
+git clone <your-repository-url>
+cd student-grade-calculator
+
+Usage
+Run via Gradle
+./gradlew run
+
+Using the GUI
+Launch the application.
+Enter student names and numeric scores.
+Click Calculate Grades to see letter grades.
+Export results using Export → Excel or Export → PDF.
+Output Examples
+Excel Export (student_grades.xlsx)
+Student(Matricule, Name, courseName, CourseCode,	Score,	Grade)
+(ICTU123, Alice, MATHs, MATHs234,	85,	B)
+(ICTU564, Bob, BIOLOGY, BIO123, 72,	C)
+The PDF contains the same table as Excel for printing or sharing.
+
+Project Structure
+src/
+ └─ main/
+     └─ kotlin/
+         └─ com/
+             └─ student/
+                 └─ StudentGradeCalculator.kt
+build.gradle.kts
+settings.gradle.kts
+Future Enhancements
+Import student data from external Excel or CSV files.
+Add configurable grading scales.
+Automated email report generation.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+Author:
+
+DJAMBOU NOUBIBOU Lareine Tracy – Student, ICT University
+
+
+---
+
+If you want, I can also **add professional badges** for Kotlin, Java, Gradle, Excel, and PDF support to make it **look like a polished GitHub project**. This will make your repository look top-tier at first glance.  
+
+Do you want me to do that next?
