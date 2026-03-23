@@ -1,5 +1,5 @@
-Queenie,92
-Nicolas,84
-Dylan,73
-Julie,61
-Jojo,40
+ICTU2330, Queenie, Biology, BIO231, 92
+ICTU2024, Nicolas, chemistry, CHE111, 75
+ICT1162, Max, MATHS, MATH001, 45
+ICT2098, Marie, probability, Stats119, 69
+ICTU2023, Lareine, DSCC, SEN2341, 90
